@@ -25,33 +25,36 @@ const formatCentsToCoins = cents => {
 }
 
 const displayCoins = coinArray => {
-    // for (const index of coinList) {
-    //     console.log(index)
-    // }
     for (let i = 0; i < coinList.length; i++) {
-        // console.log(coinList[i])
-        // coinList[i].firstChild.text = coinArray[0]
         coinList[i].firstChild.textContent = coinArray[i]
+    }
+}
+
+const clearCents = () => {
+    centsArray = []
+    for (const index of coinList) {
+        index.firstChild.textContent = ''
     }
 }
 
 form.addEventListener("submit", event => {
     event.preventDefault()
     console.log("submitted!")
+    clearCents()
     
     const dollarAmount = input.value 
-
+    
     if (isFinite(dollarAmount)) {
         const totalCents = formatDollarsToCents(dollarAmount)
         const coins = formatCentsToCoins(totalCents)
         console.log(`Here are your total cents! ${coins}`)
         displayCoins(centsArray)
+        input.value = ''
         
     } else {
         alert(`Please input a correct dollar amount! ${dollarAmount}`)
-        input.value = ''
+        clearCents()
     }
-
 })
 
 
