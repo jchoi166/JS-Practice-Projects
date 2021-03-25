@@ -25,8 +25,11 @@ const formatCentsToCoins = cents => {
 }
 
 const displayCoins = coinArray => {
-    for (let i = 0; i < coinList.length; i++) {
-        coinList[i].firstChild.textContent = coinArray[i]
+    // for (let i = 0; i < coinList.length; i++) {
+    //     coinList[i].firstChild.textContent = coinArray[i]
+    // }
+    for (const [i, elem] of coinArray.entries()) {
+        coinList[i].firstChild.textContent = elem
     }
 }
 
