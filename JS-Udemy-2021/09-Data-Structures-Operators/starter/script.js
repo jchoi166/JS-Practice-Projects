@@ -268,35 +268,3 @@ checkMiddleSeat('11b')
 checkMiddleSeat('23c')
 checkMiddleSeat('3e')
 
-// Callback functions
-
-const oneWord = function(str) {
-  return str.replace(/ /g, '').toLowerCase()
-
-}
-
-const upperFirstWord = function(str) {
-  const [first, ...other]= str.split(' ')
-  return[first.toUpperCase(), ...other].join(' ')
-}
-
-// Higer order function
-const transformer = function(str, fn) {
-  console.log(`Original string: ${str}`)
-  console.log(`Transformed string: ${fn(str)}`)
-
-  console.log(`Transformed by: ${fn.name}`)
-}
-
-transformer('Javascript is the best!', upperFirstWord)
-transformer('Javascript is the best!', oneWord)
-
-
-// Functions returning other functions 
-
-const greet = greeting => name => console.log( `${greeting} ${name}`)
-
-const greeterHey = greet('Hey')
-
-greeterHey("Jin")
-// greeterHey("steve")
