@@ -9,18 +9,17 @@
 <body>
     <div class="title"></div>
     <div class="container">
-        <div class="recipe-list">
-            <div class="loader">
-                <img src="https://media.giphy.com/media/D5GyCFkInbJlu/source.gif" alt="">
-                <h3>Loading Recipes!</h3>
-            </div>
-            <!-- <ul> -->
-                <!-- <li></li> -->
-            <!-- </ul> -->
+        <form class="brewery-input">
+            <h3>Type in your zip code to generate a list of breweries!</h3>
+            <input type="text">
+            <button type="button">Find Breweries</button>
+        </form>
+        <div class="brewery-list">
+            <ul></ul>
         </div>
-        <div class="recipe-display"></div>
+        <div class="brewery-display"></div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="/js/script.js"></script>
 </body>
 </html>
